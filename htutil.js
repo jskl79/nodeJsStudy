@@ -17,7 +17,7 @@ exports.navbar = function() {
         "<p><a href='/fibonacci'>Fibonacci's</a></p>",
         "</div>"].join('\n');
 };
-
+/*
 exports.page = function(title, navbar, content) {
   return ["<html><head><title>{title}</title></head>",
           "<body><h1>{title}</h1>",
@@ -28,4 +28,6 @@ exports.page = function(title, navbar, content) {
         .replace("{title}", title, "g")
         .replace("{navbar}", navbar, "g")
         .replace("{content}", content, "g");
+
 };
+*/
