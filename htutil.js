@@ -25,7 +25,7 @@ exports.page = function(title, navbar, content) {
           "<td>{navbar}</td><td>{content}</td>",
           "</tr></table></body></html>"
         ].join('\n')
-        .replace("{title}", title, "g")
-        .replace("{navbar}", navbar, "g")
-        .replace("{content}", content, "g");
+        .replace(/{title}/gi, title)
+        .replace(/{navbar}/gi, navbar)
+        .replace(/{content}/gi, content);
 };

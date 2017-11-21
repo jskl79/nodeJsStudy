@@ -5,16 +5,21 @@ exports.get = function(req, res) {
     'Content-Type' : 'text/html'
   });
 
+  var result = req.a * req.b;
+
   res.end(
-    htutil.page("Square", htutil.navbar(), [
-      (!isNaN(req.a) ?
-        ("<P class='result'>{a} squared={sq}</p>"
+    htutil.page("Multiplication", htutil.navbar(), [
+      (!isNaN(req.a) && !isNaN(req.b) ?
+        ("<P class='result'>{a} * {b} = {result}</p>"
           .replace("{a}", req.a)
-          .replace("{sq}", req.a * req.a))
+          .replace("{b}", req.b)
+          .replace("{result}", req.a * req.b))
         : ""),
-      "<p>Enter a number to see it's square</p>",
-      "<form name='square' actioin='/square' method='get'>",
-      "A: <input type='text' name='a' />",
+      "<p>Enter numbers to multiply</p>",
+      "<form name='mult' actioin='/mult' method='get'>",
+      "A: <input type='text' name='a' /><br/>",
+      "B: <input type='text' name='b' />",
+      "<input type='submit' value='Submit' />",
       "</form>"
     ].join('\n'))
   );
